@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  mongodb:
+    image: mongo:3.6.9
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    healthcheck:
+      test: "mongo --eval 'db.stats().ok'"
+      interval: 20s
+      timeout: 5s
+      retries: 10

@@ -7,4 +7,4 @@ const stateValidator = ({dispatch, getState}) => next => action => {
   }
 }
 
-export default stateValidator;
+export default stateValidator;f
